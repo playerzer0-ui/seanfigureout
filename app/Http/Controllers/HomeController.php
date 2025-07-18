@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function signup()
     {
-        return view('signup', ["title" => "signup or login", 'serverTime' => now()->format('H:i:s')]);
+        return view('signup', ["title" => "signup or login", 'serverTime' => now()->format('h:i:s A')]);
     }
 
     public function signOrLogin(Request $req)

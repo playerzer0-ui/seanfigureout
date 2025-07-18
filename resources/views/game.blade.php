@@ -22,11 +22,13 @@
                     <div class="moon"></div>
                 </div>
             </div>
+            <div id="serverTime"></div>
             <div class="ocean"></div>
         </main>
 
         <script>
-            window.serverTime = "{{ now()->format('H:i:s') }}";
+            //window.serverTime = "17:40:00";
+            window.serverTime = "{{ now()->format('h:i:s') }}";
         </script>
         <script src="js/skies.js" async defer></script>
     </body>
