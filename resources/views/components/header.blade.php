@@ -14,6 +14,6 @@
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/home.css">
-        <link rel="shortcut icon" href="images/favicon-16x16.png" type="image/x-icon">
+        <link rel="shortcut icon" href="images/ui/favicon-16x16.png" type="image/x-icon">
     </head>
     <body>

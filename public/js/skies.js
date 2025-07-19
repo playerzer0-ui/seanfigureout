@@ -1,9 +1,10 @@
 const fullTime = 86400;
-let [hours, minutes, seconds] = window.serverTime.split(':').map(Number);
-let serverSeconds = (hours * 3600) + (minutes * 60) + seconds;
+var [hours, minutes, seconds] = window.serverTime.split(':').map(Number);
+var serverSeconds = (hours * 3600) + (minutes * 60) + seconds;
 
-let orbitAngle = 0;
-let opacity = 0;
+var orbitAngle = 0;
+var opacity = 0;
+var toggled = false;
 
 function dayNightCycle() {
     serverSeconds = (serverSeconds + 1) % fullTime; // Add 1 second per tick
@@ -38,6 +39,16 @@ function dayNightCycle() {
         String(displaySeconds).padStart(2, '0');
 
     document.getElementById("serverTime").innerHTML = `<h4>${displayTime}</h4>`;
+}
+
+function toggleMenu() {
+    if(!toggled){
+        document.querySelector(".menu-wrapper").style.left = "0";
+    }
+    else{
+        document.querySelector(".menu-wrapper").style.left = "-200px";
+    }
+    toggled = !toggled;
 }
 
 setInterval(dayNightCycle, 1000); // update every second

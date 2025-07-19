@@ -12,10 +12,30 @@
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/skies.css">
-        <link rel="shortcut icon" href="images/favicon-16x16.png" type="image/x-icon">
+        <link rel="shortcut icon" href="images/ui/favicon-16x16.png" type="image/x-icon">
     </head>
     <body>
         <main class="game-container">
+            <aside class="menu-wrapper">
+                <div class="menu">
+                    <button class="option">
+                        <img src="images/ui/map-outline.svg" alt="">
+                        <p>map</p>
+                    </button>
+                    <button class="option">
+                        <img src="images/ui/cube-outline.svg" alt="">
+                        <p>storage</p>
+                    </button>
+                    <a href="{{ route('logout') }}" class="option">
+                        <img src="images/ui/log-out-outline.svg" alt="">
+                        <p>logout</p>
+                    </a>
+                </div>
+                <button class="toggle" onclick="toggleMenu()">
+                    <img src="images/ui/chevron-back-outline.svg" alt="">
+                </button>
+            </aside>
+
             <div class="sky">
                 <div class="night" id="nightOverlay"></div>
                 <div class="orbit">
