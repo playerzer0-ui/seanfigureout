@@ -40,10 +40,5 @@ function dayNightCycle() {
     document.getElementById("serverTime").innerHTML = `<h4>${displayTime}</h4>`;
 }
 
-setTimeout(function () {
-    document.querySelector(".night").style.transition = "opacity 3s linear";
-    console.log("transition applied");
-}, 2000);
-
 setInterval(dayNightCycle, 1000); // update every second
 dayNightCycle(); // initial call

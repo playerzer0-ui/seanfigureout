@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/skies.css">
+        <link rel="shortcut icon" href="images/favicon-16x16.png" type="image/x-icon">
     </head>
     <body>
         <main class="game-container">
@@ -23,7 +24,13 @@
                 </div>
             </div>
             <div id="serverTime"></div>
-            <div class="ocean"></div>
+            <div class="ocean-back"></div> <!-- Behind the boat -->
+            <div class="boat-container">
+                <div class="boat">
+                    <img src="images/boats/boat.png" alt="">
+                </div>
+            </div>
+            <div class="ocean-front"></div> <!-- In front of the boat -->
         </main>
 
         <script>

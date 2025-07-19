@@ -73,10 +73,45 @@
     overflow: visible;
 }
 
-.ocean {
-    position: relative;
+.ocean-back {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     height: 20%;
-    background-color: blue;
+    /* background: linear-gradient(to bottom, rgba(0, 160, 255, 0.7), rgba(0, 100, 200, 1)); */
+    background-color: rgba(235, 176, 255, 1);
     z-index: 1;
+}
+
+.boat-container {
+    position: absolute;
+    top: 73%; /* aligns visually at ocean level */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.boat {
+    width: 128px;
+    height: 64px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.ocean-front {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, rgba(0, 160, 255, 0.5), rgba(0, 100, 200, 0.8));
+    z-index: 3; /* In front of boat */
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
