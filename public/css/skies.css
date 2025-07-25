@@ -58,7 +58,12 @@ a {
     backdrop-filter: blur(13px);
     border: none;
     cursor: pointer;
+    transition: background 1s ease;
     z-index: 4;
+}
+
+.toggle:hover {
+    background: rgb(181, 0, 142);
 }
 
 .option {
