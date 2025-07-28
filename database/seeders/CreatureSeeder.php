@@ -19,19 +19,19 @@ class CreatureSeeder extends Seeder
         //creatures
         $creatures = [
             [
-                'creatureID' => 'creature-' . Str::uuid(),
+                'creatureID' => Str::uuid(),
                 'creatureName' => 'small-fish-blackstorm.png',
                 'creatureValue' => 5000,
                 'rarityID' => 1, // make sure this rarityID exists in rarities table
             ],
             [
-                'creatureID' => 'creature-' . Str::uuid(),
+                'creatureID' => Str::uuid(),
                 'creatureName' => 'small-fish-bluefish.png',
                 'creatureValue' => 7000,
                 'rarityID' => 2,
             ],
             [
-                'creatureID' => 'creature-' . Str::uuid(),
+                'creatureID' => Str::uuid(),
                 'creatureName' => 'small-fish-btrfly.png',
                 'creatureValue' => 4500,
                 'rarityID' => 3,

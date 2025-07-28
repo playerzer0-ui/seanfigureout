@@ -14,6 +14,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            MasterSeed::class,
+            RaritySeeder::class,
+            RegionSeeder::class,
+            IslandSeeder::class,
+            BuildingSeeder::class,
+            IslandBuildingSeeder::class,
+            TimeSeeder::class,
+            WeatherSeeder::class,
+            CreatureSeeder::class,
+            SpawnLocationSeeder::class,
+            SpawnTimeSeeder::class,
+        ]);
     }
 }
