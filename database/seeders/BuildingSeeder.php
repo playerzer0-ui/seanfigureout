@@ -18,27 +18,27 @@ class BuildingSeeder extends Seeder
         DB::table('buildings')->insert([
             [
                 'buildingID' => 1,
-                'buildingName' => 'tavern'
+                'buildingName' => 'buildings-tavern.png'
             ],
             [
                 'buildingID' => 2,
-                'buildingName' => 'lighthouse'
+                'buildingName' => 'buildings-lighthouse.png'
             ],
             [
                 'buildingID' => 3,
-                'buildingName' => 'marketplace'
+                'buildingName' => 'buildings-marketplace.png'
             ],
             [
                 'buildingID' => 4,
-                'buildingName' => 'weather station'
+                'buildingName' => 'buildings-weather-station.png'
             ],
             [
                 'buildingID' => 5,
-                'buildingName' => 'shop'
+                'buildingName' => 'buildings-shop.png'
             ],
             [
                 'buildingID' => 6,
-                'buildingName' => 'museum'
+                'buildingName' => 'buildings-museum.png'
             ],
         ]);
     }
