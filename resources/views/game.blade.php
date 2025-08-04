@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/skies.css">
+        <link rel="stylesheet" href="css/island.css">
         <link rel="shortcut icon" href="images/ui/favicon-16x16.png" type="image/x-icon">
     </head>
     <body>
@@ -51,6 +52,14 @@
                 </div>
             </div>
             <div class="ocean-front"></div> <!-- In front of the boat -->
+            <div class="island-row">
+                @for ($i = 0; $i < 5; $i++) {{-- Change 5 to however many islands you want --}}
+                    <div class="island">
+                        <img src="{{ asset('images/islands/islands-grass-short.png') }}" alt="Island" class="island-base">
+                        <img src="{{ asset('images/buildings/buildings-marketplace.png') }}" alt="Lighthouse" class="building">
+                    </div>
+                @endfor
+            </div>
         </main>
 
         <script>

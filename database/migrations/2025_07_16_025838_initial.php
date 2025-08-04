@@ -87,6 +87,7 @@ return new class extends Migration
         Schema::create("islands", function (Blueprint $table) {
             $table->integer("islandID")->autoIncrement();
             $table->string("islandName", 100);
+            $table->integer("distance");
             $table->integer("regionID");
             $table->foreign('regionID')->references('regionID')->on('regions')->onDelete('cascade');
         });
