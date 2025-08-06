@@ -13,13 +13,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/skies.css">
         <link rel="stylesheet" href="css/island.css">
+        <link rel="stylesheet" href="css/ui.css">
         <link rel="shortcut icon" href="images/ui/favicon-16x16.png" type="image/x-icon">
     </head>
     <body>
         <main class="game-container">
+            <div class="storage"></div>
+            <div class="map">
+                <button onclick="toggleMap()">return</button>
+                @foreach ($regions as $region)
+                    <div class="dropdown">
+                        <button class="dropbtn">{{ $region["regionName"] }}</button>
+                        <div class="dropdown-content">
+                            @foreach ($islands as $island)
+                                @if ($region['regionID'] == $island['regionID'])
+                                    <button value="{{ $island['islandID'] }}">{{ $island["islandName"] }}</button>                                
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
+            </div>
             <aside class="menu-wrapper">
                 <div class="menu">
-                    <button class="option">
+                    <button class="option" onclick="toggleMap()">
                         <img src="images/ui/map-outline.svg" alt="">
                         <p>map</p>
                     </button>
@@ -53,12 +70,10 @@
             </div>
             <div class="ocean-front"></div> <!-- In front of the boat -->
             <div class="island-row">
-                @for ($i = 0; $i < 5; $i++) {{-- Change 5 to however many islands you want --}}
-                    <div class="island">
+                    {{-- <div class="island">
                         <img src="{{ asset('images/islands/islands-grass-short.png') }}" alt="Island" class="island-base">
                         <img src="{{ asset('images/buildings/buildings-marketplace.png') }}" alt="Lighthouse" class="building">
-                    </div>
-                @endfor
+                    </div> --}}
             </div>
         </main>
 
@@ -67,5 +82,6 @@
             window.serverTime = "{{ now()->format('h:i:s') }}";
         </script>
         <script src="js/skies.js" async defer></script>
+        <script src="js/game.js" async defer></script>
     </body>
 </html>
