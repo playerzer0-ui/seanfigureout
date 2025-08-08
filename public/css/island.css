@@ -1,9 +1,10 @@
 .island-row {
     position: absolute;
-    bottom: 20%; /* just above the ocean */
+    bottom: 20%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(100%); /* Start offscreen to the right */
     display: flex;
+    transition: transform 1s ease-out;
 }
 
 .island {

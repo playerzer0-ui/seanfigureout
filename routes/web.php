@@ -24,4 +24,5 @@ Route::post("/signOrLogin", [HomeController::class, "signOrLogin"])->name("signO
 Route::get("/logout", [HomeController::class, "logout"])->name("logout");
 //90b506ab40dd02e536a6df819e7eb099
 
+Route::post('/get-island-buildings', [GameController::class, 'getIslandBuildings']);
 Route::get("/game", [GameController::class, "game"])->name("game");

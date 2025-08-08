@@ -6,6 +6,7 @@ use App\Models\Building;
 use App\Models\Island;
 use App\Models\Region;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GameController extends Controller
 {
@@ -22,8 +23,16 @@ class GameController extends Controller
     public function getIslandBuildings(Request $request)
     {
         $islandID = $request->input('islandID');
-        $buildings = Building::where('islandID', $islandID)->get();
-        
-        return $buildings;
+
+        $buildings = DB::table('buildings')
+            ->whereIn('buildingID', function ($query) use ($islandID) {
+                $query->select('buildingID')
+                    ->from('islandBuildings')
+                    ->where('islandID', $islandID);
+            })
+            ->get(['buildingName']); // Adjust column names if needed
+
+        return response()->json($buildings);
     }
+
 }

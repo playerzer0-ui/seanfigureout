@@ -86,6 +86,9 @@ function moveToIsland(islandID, islandName) {
 
             setTimeout(() => {
                 timerDiv.style.display = 'none';
+
+                // Fetch buildings and animate island using jQuery
+                showIsland(islandID);
             }, 3000);
 
             return;
@@ -95,4 +98,45 @@ function moveToIsland(islandID, islandName) {
         const secs = totalSeconds % 60;
         timeEl.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
     }, 1000);
+}
+
+function showIsland(islandID) {
+    $.ajax({
+        url: '/get-island-buildings',
+        type: 'POST',
+        data: {
+            islandID: islandID,
+            _token: $('meta[name="csrf-token"]').attr('content') // CSRF token from meta
+        },
+        success: function (buildings) {
+            const $islandRow = $('.island-row');
+            $islandRow.empty(); // Clear previous content
+
+            buildings.forEach(function (building) {
+                const $island = $(`
+                    <div class="island">
+                        <img src="images/islands/islands-grass-short.png" alt="Island" class="island-base">
+                        <img src="images/buildings/${building.buildingName}" alt="${building.buildingName}" class="building">
+                    </div>
+                `);
+                $islandRow.append($island);
+            });
+
+            // Reset transform to start off-screen
+            $islandRow.css({
+                transform: 'translateX(100%)'
+            });
+
+            // Force reflow (ensures transition)
+            void $islandRow[0].offsetWidth;
+
+            // Animate to center
+            $islandRow.css({
+                transform: 'translateX(-50%)'
+            });
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX error:', error);
+        }
+    });
 }

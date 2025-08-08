@@ -78,12 +78,13 @@
             <div class="ocean-front"></div> <!-- In front of the boat -->
             <div class="island-row">
                     {{-- <div class="island">
-                        <img src="{{ asset('images/islands/islands-grass-short.png') }}" alt="Island" class="island-base">
-                        <img src="{{ asset('images/buildings/buildings-marketplace.png') }}" alt="Lighthouse" class="building">
+                        <img src='images/islands/islands-grass-short.png' alt="Island" class="island-base">
+                        <img src="'images/buildings/buildings-marketplace.png' alt="Lighthouse" class="building">
                     </div> --}}
             </div>
         </main>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
             //window.serverTime = "17:40:00";
             window.serverTime = "{{ now()->format('h:i:s') }}";
