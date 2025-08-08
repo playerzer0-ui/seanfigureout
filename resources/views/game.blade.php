@@ -18,7 +18,14 @@
     </head>
     <body>
         <main class="game-container">
-            <div class="storage"></div>
+            <div class="storage">
+                <button onclick="toggleStorage()">return</button>
+            </div>
+            <div class="distance-timer">
+                <h3>Traveling to:</h3>
+                <h1 id="island-destination">Island</h1>
+                <h3 id="distance-time">99:99</h3>
+            </div>
             <div class="map">
                 <button onclick="toggleMap()">return</button>
                 @foreach ($regions as $region)
@@ -27,7 +34,7 @@
                         <div class="dropdown-content">
                             @foreach ($islands as $island)
                                 @if ($region['regionID'] == $island['regionID'])
-                                    <button value="{{ $island['islandID'] }}">{{ $island["islandName"] }}</button>                                
+                                    <button id="island-{{ $island['islandID'] }}" value="{{ $island['distance'] }}" onclick="moveToIsland({{$island['islandID']}},'{{$island['islandName']}}')">{{ $island["islandName"] }}</button>
                                 @endif
                             @endforeach
                         </div>
@@ -40,7 +47,7 @@
                         <img src="images/ui/map-outline.svg" alt="">
                         <p>map</p>
                     </button>
-                    <button class="option">
+                    <button class="option" onclick="toggleStorage()">
                         <img src="images/ui/cube-outline.svg" alt="">
                         <p>storage</p>
                     </button>

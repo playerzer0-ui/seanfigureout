@@ -18,4 +18,12 @@ class GameController extends Controller
             "islands" => $islands,
         ]);
     }
+
+    public function getIslandBuildings(Request $request)
+    {
+        $islandID = $request->input('islandID');
+        $buildings = Building::where('islandID', $islandID)->get();
+        
+        return $buildings;
+    }
 }

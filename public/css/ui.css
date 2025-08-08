@@ -84,3 +84,18 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.distance-timer {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transform: translateX(-50%);
+    background-color: yellow;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 10;
+    display: none;
+}
